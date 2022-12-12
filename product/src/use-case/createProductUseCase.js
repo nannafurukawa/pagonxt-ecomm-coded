@@ -1,10 +1,6 @@
-import { randomUUID } from 'node:crypto';
+import { saveProduct } from '../repositories/productRepository.js'
 
 export async function createProductUseCase(product) {
-    const id = randomUUID();
-    const createdDate = new Date().toISOString().substring(0, 10);
-
-    const createdProduct = { ...product, id, createdDate };
-
-    return createdProduct;
+    const savedProduct = await saveProduct(product);
+    return savedProduct;
 }
