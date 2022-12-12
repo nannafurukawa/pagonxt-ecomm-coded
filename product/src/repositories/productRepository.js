@@ -12,3 +12,7 @@ export async function saveProduct(product) {
 
     return productCreated;
 }
+
+export async function findProducts() {
+    return products;
+}
