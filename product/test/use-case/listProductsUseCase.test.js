@@ -1,43 +1,8 @@
-import { randomUUID } from 'node:crypto';
+
 import { createProductUseCase } from "../../src/use-case/createProductUseCase.js"
 import { listProductsUseCase } from "../../src/use-case/listProductsUseCase.js";
+import { productExample } from "../data/products.js";
 
-const product = {
-    usuarioId: randomUUID(),
-    nome: 'Iphone 11',
-    valor: 5990.00,
-    quantidade: 11,
-    descricao: 'Iphone 11 Branco, 256GB, Novo, Lacrado!',
-    categoria: 'smartphones',
-    caracteristicas: [
-        {
-            nome: 'cor',
-            descricao: 'branco',
-        },
-        {
-            nome: 'desbloquado',
-            descricao: 'sim',
-        },
-        {
-            nome: 'memória',
-            descricao: '8 GB',
-        },
-        {
-            nome: 'armazenamento',
-            descricao: '256 GB',
-        }
-    ],
-    imagens: [
-        {
-            url: 'url-da-imagem.jpg',
-            descricao: 'Frente do Iphone',
-        },
-        {
-            url: 'url-da-imagem-2.jpg',
-            descricao: 'Traseira do Iphone',
-        }
-    ],
-}
 
 /** Imprime products antes de cadastrar qualquer produto */
 
@@ -45,6 +10,6 @@ const emptyProductList = await listProductsUseCase();
 console.log("emptyProductList", emptyProductList);
 
 /** Imprime product depois de cadastrar algum produto */
-await createProductUseCase(product);
+await createProductUseCase(productExample);
 const productList = await listProductsUseCase();
 console.log("productList", JSON.stringify(productList, undefined, 2));
