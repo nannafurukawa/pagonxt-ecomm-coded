@@ -6,4 +6,14 @@ services:
   account:
     image: pagonxt/account
     build: account # docker build ./account -t pagonxt/account
+
+  account-database:
+    image: mongo
+    environment:
+      MONGO_INITDB_DATABASE: accounts
+      MONGO_INITDB_ROOT_USERNAME: mongouser
+      MONGO_INITDB_ROOT_PASSWORD: mongopass
+
+    ports:
+      - 27017:27017
     
