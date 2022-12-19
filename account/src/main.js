@@ -13,5 +13,5 @@ app.get('/health', (request, response) => {
 app.use(router);
 
 app.listen(3000, () => {
-    console.log('products service is running');
+    console.log('accounts service is running');
 });

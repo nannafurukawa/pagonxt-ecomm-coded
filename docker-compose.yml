@@ -3,7 +3,21 @@ services:
   product:
     image: pagonxt/product
     build: product # docker build ./product -t pagonxt/product
+    ports:
+      - 3000:3000
   account:
     image: pagonxt/account
     build: account # docker build ./account -t pagonxt/account
+    ports:
+      - 3001:3000
+
+  account-database:
+    image: mongo
+    environment:
+      MONGO_INITDB_DATABASE: accounts
+      MONGO_INITDB_ROOT_USERNAME: mongouser
+      MONGO_INITDB_ROOT_PASSWORD: mongopass
+
+    ports:
+      - 27017:27017
     
