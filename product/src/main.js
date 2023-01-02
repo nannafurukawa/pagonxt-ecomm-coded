@@ -4,8 +4,9 @@ import swaggerExpress from 'swagger-ui-express';
 import yaml from 'yamljs';
 import { router } from './routes.js';
 
-const swaggerDocs = yaml.load('./docs.yaml');
+import { Sequelize } from 'sequelize';
 
+const swaggerDocs = yaml.load('./docs.yaml');
 
 const app = express();
 

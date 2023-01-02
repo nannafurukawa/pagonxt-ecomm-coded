@@ -8,6 +8,19 @@ services:
       - ./product:/app
     ports:
       - 3000:3000
+  
+  product-database:
+    image: mysql
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: true
+      # MYSQL_ROOT_PASSWORD: 'senhaMaluca'
+      # mysql://root:senhaMaluca@product-database:3006/products
+      MYSQL_DATABASE: products
+      MYSQL_USER: mysqluser
+      MYSQL_PASSWORD: mysqlpass
+    ports:
+      - 3306:3306
+
   account:
     image: pagonxt/account
     build: account # docker build ./account -t pagonxt/account
