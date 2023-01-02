@@ -12,9 +12,7 @@ services:
   product-database:
     image: mysql
     environment:
-      MYSQL_RANDOM_ROOT_PASSWORD: true
-      # MYSQL_ROOT_PASSWORD: 'senhaMaluca'
-      # mysql://root:senhaMaluca@product-database:3006/products
+      MYSQL_ROOT_PASSWORD: f30a1cd65530caf64f1ea31f702e7124a1bbee55
       MYSQL_DATABASE: products
       MYSQL_USER: mysqluser
       MYSQL_PASSWORD: mysqlpass
